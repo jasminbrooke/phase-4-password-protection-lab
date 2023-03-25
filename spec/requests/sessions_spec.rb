@@ -7,7 +7,6 @@ RSpec.describe "Sessions", type: :request do
     context 'with valid username and password' do
       it 'returns the logged in user' do
         post "/login", params: { username: user.username, password: user.password }
-
         expect(response.body).to include_json({ 
           id: user.id, username: user.username
         })
